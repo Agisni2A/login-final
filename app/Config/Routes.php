@@ -32,7 +32,7 @@ $routes->set404Override();
 $routes->get('/', 'login::index');
 $routes->get('/login', 'login::index');
 $routes->post('/login/process', 'Login::process');
-$routes->get('/dashboard', 'Home::dashboard'); // Ubah "Dashboard" dengan nama controller dan metode dashboard Anda
+$routes->get('/dashboard', 'Home::dashboard');
 $routes->get('/logout', 'Login::logout');
 
 /*

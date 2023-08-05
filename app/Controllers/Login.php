@@ -25,13 +25,12 @@ class Login extends BaseController
             session()->set('id', $cek['id']);
             return redirect()->to(base_url('dashboard'));
         } else {
-            return redirect()->to(base_url('login'))->with('error', 'Username / Password salah');
+            return redirect()->to(base_url('login'))->with('errors', 'Username / Password salah');
         }
     }
 
     public function logout()
     {
-        // Load session library
         $session = session();
         $session->remove('email');
         $session->remove('username');
