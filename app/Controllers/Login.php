@@ -25,8 +25,7 @@ class Login extends BaseController
             session()->set('id', $cek['id']);
             return redirect()->to(base_url('dashboard'));
         } else {
-            session()->setFlashdata('gagal', 'Username / Password salah');
-            return redirect()->to(base_url('login'));
+            return redirect()->to(base_url('login'))->with('error', 'Username / Password salah');
         }
     }
 
@@ -34,7 +33,9 @@ class Login extends BaseController
     {
         // Load session library
         $session = session();
-        $session->remove('user');
+        $session->remove('email');
+        $session->remove('username');
+        $session->remove('id');
         return redirect()->to('/');
     }
 }
