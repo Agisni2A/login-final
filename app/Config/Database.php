@@ -29,7 +29,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'dashboard',
+        'database' => 'spl-inventory',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

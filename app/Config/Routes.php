@@ -29,11 +29,22 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'login::index');
-$routes->get('/login', 'login::index');
-$routes->post('/login/process', 'Login::process');
-$routes->get('/dashboard', 'Home::dashboard');
-$routes->get('/logout', 'Login::logout');
+$routes->get('/', 'Clogin::index');
+$routes->get('/login', 'Clogin::index');
+$routes->post('/login/process', 'CLogin::process');
+$routes->get('/dashboard', 'CDashboard::index');
+$routes->get('/dashboard/master/muser', 'CDashboard::muser');
+$routes->get('/dashboard/master/maset', 'CDashboard::maset');
+$routes->get('/dashboard/mmenu/pinjam', 'CDashboard::pinjam');
+$routes->get('/dashboard/mmenu/kembali', 'CDashboard::kembali');
+$routes->get('/dashboard/add', 'CDashboard::addItem');
+
+$routes->get('user/changePasswordToHash', 'login::changePasswordToHash');
+
+$routes->post('/dashboard/addAction', 'ItemController::addItemAction');
+
+
+$routes->get('/logout', 'CLogin::logout');
 
 /*
  * --------------------------------------------------------------------
